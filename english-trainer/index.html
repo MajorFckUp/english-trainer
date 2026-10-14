@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2563eb">
+  <title>Engels oefenen</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <section id="view-start">
+      <h1>Engels oefenen</h1>
+
+      <h2>Wat wil je oefenen?</h2>
+      <div class="choices" id="choice-set" role="group" aria-label="Wat wil je oefenen?">
+        <button type="button" data-value="words">Woorden</button>
+        <button type="button" data-value="sentences">Zinnen</button>
+        <button type="button" data-value="all">Alles</button>
+      </div>
+
+      <h2>Welke kant op?</h2>
+      <div class="choices" id="choice-dir" role="group" aria-label="Welke kant op?">
+        <button type="button" data-value="en-nl">Engels → Nederlands</button>
+        <button type="button" data-value="nl-en">Nederlands → Engels</button>
+        <button type="button" data-value="mix">Door elkaar</button>
+      </div>
+
+      <button type="button" id="btn-start" class="primary big">Start</button>
+
+      <p id="progress-line" class="muted"></p>
+      <button type="button" id="btn-reset" class="link">Voortgang wissen</button>
+    </section>
+
+    <section id="view-practice" hidden>
+      <div class="topbar">
+        <button type="button" id="btn-stop" class="link">← Stoppen</button>
+        <div class="bar" aria-hidden="true"><div id="bar-fill"></div></div>
+        <span id="count" class="muted"></span>
+      </div>
+
+      <p id="topic" class="muted"></p>
+      <p id="direction" class="muted"></p>
+      <p id="prompt" class="prompt"></p>
+      <p id="hint" class="muted"></p>
+
+      <form id="form" autocomplete="off">
+        <label for="answer" id="answer-label" class="sr-only">Jouw antwoord</label>
+        <input id="answer" type="text" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" enterkeyhint="done">
+        <button type="submit" id="btn-check" class="primary big">Controleer</button>
+      </form>
+
+      <div id="feedback" role="status" aria-live="polite"></div>
+    </section>
+
+    <section id="view-result" hidden>
+      <h1>Klaar!</h1>
+      <p id="score" class="prompt"></p>
+      <div id="mistakes"></div>
+      <div class="row">
+        <button type="button" id="btn-again" class="primary big">Nog een ronde</button>
+        <button type="button" id="btn-home" class="big">Terug</button>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
